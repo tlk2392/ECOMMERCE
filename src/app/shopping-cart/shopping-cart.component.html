@@ -1,1 +1,35 @@
-<p>shopping-cart works!</p>
+<div class="container" *ngFor="let i of items; index as idx">
+    <ngx-spinner
+     bdColor="blue"
+    size="medium"
+     color="#fff"
+    type="ball-scale-multiple"
+    >
+    <p style="font-size: 20px; color: white">Loading...</p>
+    </ngx-spinner>
+    <div class="row justify-content-end" style="padding-bottom: 10px !important;">
+        <div class="col-4" style="padding-bottom: 10px !important;" >
+            <p style="text-align: center; font-size: x-large; font-style: italic;"><a [routerLink]="['/item',i.id]">{{i.name}}</a><p>
+            <p style="text-align: center;"><b>Price: </b><u>${{i.price}}</u></p>
+            <p style="text-align: center;"><b>Description: </b>{{i.description}}</p>
+            <p style="text-align: center;"><b>Item ID:</b> {{i.id}}</p>
+        </div>
+        <div class="col-4">
+            <button style="margin-right: 2px;" class="btn btn-primary" (click)="deleteItem(i.id)">Delete Item</button>
+            <select [(ngModel)]="items[idx].quantity"  (change)="updateQuantity(i.id, idx)" style="width: 70px; height: 30px;">
+                <option *ngFor="let o of option">{{o}}</option>
+            </select>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row justify-content-center" style="padding-bottom: 10px !important;">
+        <div class="col-4" style="padding-bottom: 10px !important;" >
+        <button style="margin-right: 2px;" class="btn btn-primary" (click)="clearCart()">Clear Cart</button>
+        <button style="margin-right: 2px;" class="btn btn-warning" (click)="purchase()">Purchase</button>
+        </div>
+        <div class="row justify-content-center" style="padding-bottom: 10px !important;">
+            Total: ${{total}} 
+        </div>
+    </div>
+</div>

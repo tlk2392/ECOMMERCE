@@ -1,1 +1,25 @@
-<p>item-detail works!</p>
+<div class="container">
+<ngx-spinner
+  bdColor="blue"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+>
+  <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
+    <div class="row justify-content-end" style="padding-bottom: 10px !important;">
+        <div class="col-4" style="padding-bottom: 10px !important;" >
+            <p style="text-align: center; font-size: x-large; font-style: italic;">{{itemDetails.name}}<p>
+            <p style="text-align: center;"><b>Price: </b><u>${{itemDetails.price}}</u></p>
+            <p style="text-align: center;"><b>Description: </b>{{itemDetails.description}}</p>
+            <p style="text-align: center;"><b>Item ID:</b> {{itemDetails.id}}</p>
+        </div>
+        <div class="col-4">
+            <button style="margin-right: 2px;" class="btn btn-danger" (click)="shop.addToCart(itemDetails.id,quantity)">Add To Cart</button>
+            <button style="margin-right: 2px;" class="btn btn-primary" (click)="shop.buyNow(itemDetails.id,quantity)">Buy Now!</button>
+            <select [(ngModel)]="quantity" style="width: 70px; height: 30px;">
+                <option *ngFor="let o of option">{{o}}</option>
+            </select>
+        </div>
+    </div>
+</div>

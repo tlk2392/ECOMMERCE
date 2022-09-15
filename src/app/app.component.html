@@ -1,4 +1,13 @@
+
 <div class="container-fluid" style="padding-bottom: 40px;">
+  <ngx-spinner
+   bdColor="blue"
+   size="medium"
+    color="#fff"
+    type="ball-scale-multiple"
+  >
+ <p style="font-size: 20px; color: white">Loading...</p>
+ </ngx-spinner>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
           <a class="navbar-brand" [routerLink]="['/']">EShop</a>
@@ -8,7 +17,6 @@
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
               <a class="nav-link active" [routerLink]="['/']">Home</a>
-              <a class="nav-link" href="#">Item Details</a>
               <a class="nav-link" a [routerLink]="['/cart']">Shopping Cart</a>
             </div>
           </div>

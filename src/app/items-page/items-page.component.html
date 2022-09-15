@@ -1,4 +1,12 @@
 <div class="container" *ngFor="let i of items; index as idx">
+    <ngx-spinner
+     bdColor="blue"
+    size="medium"
+     color="#fff"
+    type="ball-scale-multiple"
+    >
+    <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
     <div class="row justify-content-end" style="padding-bottom: 10px !important;">
         <div class="col-4" style="padding-bottom: 10px !important;" >
             <p style="text-align: center; font-size: x-large; font-style: italic;"><a [routerLink]="['/item',i.id]">{{i.name}}</a><p>
@@ -7,7 +15,8 @@
             <p style="text-align: center;"><b>Item ID:</b> {{i.id}}</p>
         </div>
         <div class="col-4">
-            <button style="margin-right: 2px;" class="btn btn-danger" (click)="addToCart(i.id,items[idx].quantity)">Add To Cart</button>
+            <button style="margin-right: 2px;" class="btn btn-danger" (click)="shop.addToCart(i.id,items[idx].quantity)">Add To Cart</button>
+            <button style="margin-right: 2px;" class="btn btn-primary" (click)="shop.buyNow(i.id,items[idx].quantity)">Buy Now!</button>
             <select [(ngModel)]="items[idx].quantity" style="width: 70px; height: 30px;">
                 <option *ngFor="let o of option">{{o}}</option>
             </select>
