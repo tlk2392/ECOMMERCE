@@ -25,3 +25,8 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+-To run program you will need angular 14.2.2 installed globally and node.js version 16.7.
+-Make sure to run two terminal one for the API and the other for APP.
+-I did not have a lot of time to style app. But the functionality is to specifications.
+-I never use inline styling in real world!
